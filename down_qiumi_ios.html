@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下载</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/swiper-3.4.2.min.js"></script>
+
+    <link rel="stylesheet" href="./css/down_ios.css">
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <script>
+        //声明_czc对象:
+        var _czc = _czc || [];
+        //绑定siteid，请用您的siteid替换下方"XXXXXXXX"部分
+        _czc.push(["_setAccount", "1275673178"]);
+    </script>
+</head>
+
+<body>
+    <div class="swiperBox">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <p class="decs">第一步</p>
+                    <img src="./images/qiumi_logo.png" alt="" class="logo">
+                    <a href="itms-services://?action=download-manifest&url=https://appdownload.dnjinron.com/ios/qiumi/manifest.plist" alt="" class="downBtn">
+                        <img src="./images/blue_btn.png" alt="" class="down">
+                        <span class="down_desc">下载球秘</span>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <p class="decs">第二步</p>
+                    <img src="./images/qiumi_desc.png" alt="" class="descImg">
+                    <div class="downOver">
+                        <p class="over1">确认下载完成，
+                            <a href="https://appdownload.dnjinron.com/ios/RedWallet.mobileprovision">
+                                前往设置信任
+                            </a>
+                        </p>
+                        <p class="over2">完成设置后桌面打开球秘</p>
+                    </div>
+                    <span class="seeBtn">点击观看设置教程</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="downPop">
+        <div class="tinymask"></div>
+        <div class="popMain">
+            <img src="./images/close_btn.png" alt="" class="closeBtn">
+            <p class="title">球秘 打开方式</p>
+            <div class="descBox">
+                <img class="descImg" src="./images/qiumi_step1.png" alt="">
+                <span>1/6 打开设置</span>
+                <img class="descImg" src="./images/setp_2.png" alt="">
+                <span>2/6 选择通用</span>
+                <img class="descImg" src="./images/setp_3.png" alt="">
+                <span>3/6 找到 描述文件 或 设备管理</span>
+                <img class="descImg" src="./images/setp_4.png" alt="">
+                <span>4/6 选择企业应用</span>
+                <img class="descImg" src="./images/qiumi_setp5.png" alt="">
+                <span>5/6 点击信任</span>
+                <img class="descImg" src="./images/qiumi_setp6.png" alt="">
+                <span>6/6 打开球秘</span>
+            </div>
+            <p class="mask"></p>
+        </div>
+    </div>
+</body>
+<!-- 友盟统计 -->
+<div style="display:none;">
+    <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1275673178'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1275673178' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+<script>
+    //轮播图
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        observer: true,
+        observeParents: true,
+    });
+    $(".downBtn").on("click", function () {
+        _czc.push(["_trackEvent", "ios", "球秘", "下载成功"]);
+    })
+    // 点击下载按钮滑动到下一页
+    $(".downBtn").on("click", function () {
+        setTimeout(function () { swiper.slideNext(); }, 800)
+    })
+    // 弹窗显示
+    $(".seeBtn").on("click", function (e) {
+        $(".downPop").show();
+        $(".descBox").scrollTop(0)
+    })
+    // 弹窗隐藏
+    $(".tinymask").on("click", function () {
+        $(".downPop").hide();
+    })
+    // 弹窗隐藏
+    $(".closeBtn").on("click", function () {
+        $(".downPop").hide();
+    })
+</script>
+
+</html>
